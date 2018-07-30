@@ -1,7 +1,8 @@
 import RPI.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
-
+HIGH=True
+LOW=False
 class motor:
     def __init__(self):
         self.IN1=0
@@ -13,24 +14,24 @@ class motor:
         self.ENA=0
         self.ENB=0
 
-        self.pwn_A=setPin_A
-        self.pwm_B=setPin_B
+        self.pwn_A=self.setPin_A
+        self.pwm_B=self.setPin_B
 
     def setPin_A(self):
-        GPIO.setup(self.IN1,OUT)
-        GPIO.setup(self.IN2,OUT)
-        GPIO.setup(self.ENA,OUT)
-        pwm=GPIO.PWM(ENA,100)
+        GPIO.setup(self.IN1,GPIO.OUT)
+        GPIO.setup(self.IN2,GPIO.OUT)
+        GPIO.setup(self.ENA,GPIO.OUT)
+        pwm=GPIO.PWM(self.ENA,100)
 
         pwm.start(0)
         return pwm
         # PWM 핸들 반환
 
     def setPin_B(self):
-        GPIO.setup(self.IN3,OUT)
-        GPIO.setup(self.IN4,OUT)
-        GPIO.setup(self.ENB,OUT)
-        pwm=GPIO.PWM(ENA,100)
+        GPIO.setup(self.IN3,GPIO.OUT)
+        GPIO.setup(self.IN4,GPIO.OUT)
+        GPIO.setup(self.ENB,GPIO.OUT)
+        pwm=GPIO.PWM(self.ENB,100)
 
         pwm.start(0)
         return pwm

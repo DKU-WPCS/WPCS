@@ -28,17 +28,17 @@ class sensing:
         #PULL_DOWN을 상정 HIGH=True LOW= False
 
     def checking(self):
-        self.A_stat=GPIO.input(pinA)
-        self.B_stat=GPIO.input(pinB)
+        self.A_stat=GPIO.input(self.pinA)
+        self.B_stat=GPIO.input(self.pinB)
     def compare_processing(self):
         self.checking()
-        if A_stat==True && B_stat ==False:
+        if self.A_stat==True and self.B_stat ==False:
             # A에 닿아 있는 상태(CLOSE)
             return CLOSE
-        elif A_stat==False && B_stat ==True:
+        elif self.A_stat==False and self.B_stat ==True:
             # B에 닿아 있는 상태(CLOSE)
             return OPEN
-        elif A_stat==False && B_stat ==False:
+        elif self.A_stat==False and self.B_stat ==False:
             # 두 부분 다 닿아있지 않은 상태(FLOAT)
             return 1
         else:

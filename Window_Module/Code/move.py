@@ -1,5 +1,5 @@
-import motor,encoder from motor.py
-import sensing from sensing.py
+from motor.py import motor, encoder
+from sensing.py import sensing
 
 run =True
 OPEN=True
@@ -20,7 +20,7 @@ motor_con=CLOSE
 #FW를 여는 방향으로 설정
 
 def con_change(codition):
-    if condition ==CLOSE:
+    if codition ==CLOSE:
         while sensor.compare_processing==CLOSE:
             motor.MotorControl('A','BW',speed)
             if sensor.compare_processing == -1:
@@ -48,9 +48,9 @@ while run:
     # 소켓을 통한 입력을 받고 그 CLOSE, OPEN 상태를 input_result에 저장
     #
 
-    if input_result==OPEN && motor_con==CLOSE:
+    if input_result==OPEN and motor_con==CLOSE:
        con_change(CLOSE)
-    elif input_result==CLOSE && motor_con==OPEN:
+    elif input_result==CLOSE and motor_con==OPEN:
        con_change(OPEN)
     else:
         pass
