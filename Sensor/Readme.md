@@ -9,6 +9,6 @@ Binary 값으로 읽어오기 때문에 encoding 과 parsing 과정 추가 필�
 회로 결선도
 
 ```
-![Alt text]https://github.com/DKU-WPCS/WPCS/blob/master/Sensor/img/circuit%20diagram.JPG
+![Alt text](https://github.com/DKU-WPCS/WPCS/blob/master/Sensor/img/circuit%20diagram.JPG)
 ```
 
